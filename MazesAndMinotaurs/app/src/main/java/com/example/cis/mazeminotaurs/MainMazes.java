@@ -16,7 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.cis.mazeminotaurs.NewCharacter.CharacterCreationFragment;
+import com.example.cis.mazeminotaurs.NewCharacter.CharacterCreateActivity;
 import com.example.cis.mazeminotaurs.serialization.SaveAndLoadPerformer;
 import com.example.cis.mazeminotaurs.util.Util;
 import com.example.cis.mazeminotaurs.web_resources.CompanionFragment;
@@ -152,7 +152,7 @@ public class MainMazes extends AppCompatActivity
         Util.clearBackStack(this);
 
         if (id == R.id.create_character) {
-            contentFragment = new CharacterCreationFragment();
+            actIntent = new Intent(this, CharacterCreateActivity.class);
         } else if (id == R.id.play_character) {
             actIntent = new Intent(this, CharacterPlayActivity.class);
         } else if (id == R.id.manage_characters) {
