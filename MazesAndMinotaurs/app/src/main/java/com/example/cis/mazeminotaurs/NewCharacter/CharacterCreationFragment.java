@@ -168,7 +168,7 @@ public class CharacterCreationFragment extends Fragment implements DetailDialogF
 
         getFragmentManager()
                 .beginTransaction()
-                .replace(R.id.content_frame, addedType)
+                .replace(R.id.create_content_frame, addedType)
                 .addToBackStack(null)
                 .commit();
     }
