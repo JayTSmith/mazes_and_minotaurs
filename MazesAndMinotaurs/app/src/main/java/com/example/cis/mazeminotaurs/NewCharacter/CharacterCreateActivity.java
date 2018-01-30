@@ -1,4 +1,4 @@
-package com.example.cis.mazeminotaurs;
+package com.example.cis.mazeminotaurs.NewCharacter;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,26 +8,30 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.example.cis.mazeminotaurs.MainMazes;
+import com.example.cis.mazeminotaurs.R;
+
 /**
  * This activity serves as a container for the character sheet and related fragments.
  * The user does nothing to interact with this.
- * @author jsmith on 11/17/17.
+ *
+ * @author jsmith, 1/30/18
  */
 
-public class CharacterPlayActivity extends AppCompatActivity {
+public class CharacterCreateActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_character_play);
+        setContentView(R.layout.activity_character_create);
 
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.play_content_frame, new CharacterSheetFragment())
+                .replace(R.id.create_content_frame, new CharacterCreationFragment())
                 .commit();
     }
 

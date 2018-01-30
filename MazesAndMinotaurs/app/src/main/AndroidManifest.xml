@@ -30,10 +30,18 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+
         <activity
-            android:name=".NewCharacter.ClassConfirmationPopUp"
+            android:name=".NewCharacter.CharacterCreateActivity"
             android:label="CharacterCreation"
+            android:parentActivityName=".MainMazes"
+            android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.cis.mazeminotaurs.NewCharacter.CharacterCreateActivity"
+                />
         </activity>
 
         <activity

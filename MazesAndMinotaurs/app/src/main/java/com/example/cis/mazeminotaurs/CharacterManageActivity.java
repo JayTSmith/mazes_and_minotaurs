@@ -1,5 +1,6 @@
 package com.example.cis.mazeminotaurs;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +11,12 @@ import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.example.cis.mazeminotaurs.fragments.CharManageFragment;
+import com.example.cis.mazeminotaurs.serialization.SaveAndLoadPerformer;
 import com.example.cis.mazeminotaurs.util.CommonStrings;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 
 /**
  * This activity displays a list of characters found in the portfolio.
@@ -68,6 +74,18 @@ public class CharacterManageActivity extends AppCompatActivity implements CharMa
     public void onDelete(int i) {
         if (Portfolio.get().getPortfolio().size() > 1) {
             mAdapter.removeCharacter(i);
+
+            // Auto-saves the Portfolio
+            try {
+                FileOutputStream fos = getApplicationContext()
+                        .openFileOutput(Portfolio.FILENAME, Context.MODE_PRIVATE);
+                OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fos);
+                outputStreamWriter.write(SaveAndLoadPerformer.savePortfolio());
+                outputStreamWriter.close();
+                fos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         } else {
             Toast.makeText(this, "Must have one character at all times!", Toast.LENGTH_SHORT).show();
         }
