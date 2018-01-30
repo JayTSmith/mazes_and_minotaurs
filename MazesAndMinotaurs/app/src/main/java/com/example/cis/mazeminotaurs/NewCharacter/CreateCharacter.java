@@ -1,5 +1,6 @@
 package com.example.cis.mazeminotaurs.NewCharacter;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -25,9 +26,13 @@ import com.example.cis.mazeminotaurs.character.classes.BaseClass;
 import com.example.cis.mazeminotaurs.character.classes.Noble;
 import com.example.cis.mazeminotaurs.character.stats.AttributeScoreComparator;
 import com.example.cis.mazeminotaurs.character.stats.Score;
+import com.example.cis.mazeminotaurs.serialization.SaveAndLoadPerformer;
 import com.example.cis.mazeminotaurs.util.CommonStrings;
 import com.example.cis.mazeminotaurs.util.Util;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -171,6 +176,18 @@ public class CreateCharacter extends Fragment implements AttributePriorityDialog
                 // Noble special case
                 if (mBaseClass instanceof Noble) {
                     ((Noble) mBaseClass).doHeritage();
+                }
+
+                // Auto-saves the Portfolio
+                try {
+                    FileOutputStream fos = getActivity()
+                            .openFileOutput(Portfolio.FILENAME, Context.MODE_PRIVATE);
+                    OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fos);
+                    outputStreamWriter.write(SaveAndLoadPerformer.savePortfolio());
+                    outputStreamWriter.close();
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
 
                 // Clear the backstack before replacing the screen
