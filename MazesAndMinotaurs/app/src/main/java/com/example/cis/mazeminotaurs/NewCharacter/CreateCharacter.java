@@ -189,7 +189,7 @@ public class CreateCharacter extends Fragment implements AttributePriorityDialog
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
+              
                 // Clear the backstack before replacing the screen
                 Util.clearBackStack(getFragmentManager());
                 Intent intent = new Intent(getContext(), CharacterPlayActivity.class);
