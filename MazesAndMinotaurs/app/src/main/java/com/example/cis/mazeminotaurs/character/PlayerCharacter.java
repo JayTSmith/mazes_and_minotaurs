@@ -16,6 +16,8 @@ import com.example.cis.mazeminotaurs.util.CommonStrings;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Used to hold the data of a player's character.
@@ -46,7 +48,7 @@ public class PlayerCharacter implements Serializable {
     /**
      * The character's attribute scores.
      */
-    private HashMap<Score, AttributeScore> mScores = new HashMap<>();
+    private Map<Score, AttributeScore> mScores = new HashMap<>();
 
     /**
      * The character's current hit points.
@@ -66,7 +68,7 @@ public class PlayerCharacter implements Serializable {
     /**
      * The character's money.
      */
-    private HashMap<Money, Integer> mMoney = new HashMap<>();
+    private Map<Money, Integer> mMoney = new HashMap<>();
 
     /**
      * The character's age.
@@ -81,7 +83,7 @@ public class PlayerCharacter implements Serializable {
     /**
      * All of the items that the character is holding.
      */
-    private ArrayList<Equipment> mInventory = new ArrayList<>();
+    private List<Equipment> mInventory = new ArrayList<>();
 
     /**
      * The character's equipped weapon.
@@ -267,7 +269,7 @@ public class PlayerCharacter implements Serializable {
      * Getter of the mMoney attribute
      * @return the money of the character
      */
-    public HashMap<Money, Integer> getMoney() {
+    public Map<Money, Integer> getMoney() {
         return mMoney;
     }
 
@@ -291,7 +293,7 @@ public class PlayerCharacter implements Serializable {
      * Automatically converts the cash that a player character is holding
      */
     public void validateMoney() {
-        HashMap<Money, Integer> cash = getMoney();
+        Map<Money, Integer> cash = getMoney();
 
         // Check for negative balances
         while (cash.get(Money.SILVER) < 0 && cash.get(Money.GOLD) - 1 >= 0) {
@@ -460,7 +462,7 @@ public class PlayerCharacter implements Serializable {
      * @return      the scores of the character.
      */
 
-    public HashMap<Score, AttributeScore> getScores() {
+    public Map<Score, AttributeScore> getScores() {
         return mScores;
     }
 
@@ -523,8 +525,8 @@ public class PlayerCharacter implements Serializable {
      * A helper method to find all of the weapons in the character's inventory
      * @return all weapons found in the character's inventory.
      */
-    public ArrayList<Weapon> getWeapons(){
-        ArrayList<Weapon> weaponsFound = new ArrayList<>();
+    public List<Weapon> getWeapons() {
+        List<Weapon> weaponsFound = new ArrayList<>();
 
         for (Equipment equipment: getInventory()) {
             if (equipment instanceof Weapon) {
@@ -571,7 +573,7 @@ public class PlayerCharacter implements Serializable {
      * Getter of the mInventory attribute.
      * @return the inventory of the character
      */
-    public ArrayList<Equipment> getInventory() {
+    public List<Equipment> getInventory() {
         return mInventory;
     }
 
@@ -579,7 +581,7 @@ public class PlayerCharacter implements Serializable {
      * Setter of the mInventory attribute.
      * @param inventory the new inventory of the character
      */
-    public void setInventory(ArrayList<Equipment> inventory) {
+    public void setInventory(List<Equipment> inventory) {
         mInventory = inventory;
     }
 
