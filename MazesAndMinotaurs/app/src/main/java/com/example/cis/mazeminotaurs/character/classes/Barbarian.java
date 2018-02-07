@@ -13,6 +13,7 @@ import com.example.cis.mazeminotaurs.util.Util;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * This class represents the Barbarian that is in the game.
@@ -58,11 +59,11 @@ public class Barbarian extends Warrior {
         setPossibleLevelScores(new Score[]{Score.SKILL, Score.WILL, Score.MIGHT});
 
         Score[] primAttrs = {Score.MIGHT, Score.WILL};
-        ArrayList<Score> primAttributes = new ArrayList<>();
+        List<Score> primAttributes = new ArrayList<>();
         Collections.addAll(primAttributes, primAttrs);
 
         EquipmentDB equipDB = EquipmentDB.getInstance();
-        ArrayList<Equipment> startGear = new ArrayList<>();
+        List<Equipment> startGear = new ArrayList<>();
 
         //Equipment checks
         setWeaponOfChoice(weaponOfChoice);

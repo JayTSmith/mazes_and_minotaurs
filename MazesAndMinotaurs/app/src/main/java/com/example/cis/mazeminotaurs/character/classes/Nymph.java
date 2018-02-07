@@ -10,6 +10,7 @@ import com.example.cis.mazeminotaurs.rollDice.rollDice;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * This class represents the Nymph that is in the game.
@@ -37,10 +38,10 @@ public class Nymph extends Magician {
         setPossibleLevelScores(new Score[]{Score.GRACE, Score.WITS, Score.WILL});
 
         Score[] primAttrs = {Score.GRACE, Score.LUCK};
-        ArrayList<Score> primAttributes = new ArrayList<>();
+        List<Score> primAttributes = new ArrayList<>();
         Collections.addAll(primAttributes, primAttrs);
 
-        ArrayList<Equipment> startGear = new ArrayList<>();
+        List<Equipment> startGear = new ArrayList<>();
 
         int rolledGold = rollDice.roll(6, 3) * 0;
 
