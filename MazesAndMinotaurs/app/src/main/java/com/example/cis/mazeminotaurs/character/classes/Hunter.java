@@ -13,6 +13,7 @@ import com.example.cis.mazeminotaurs.util.Util;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * This class represents the Hunter that is in the game.
@@ -51,12 +52,12 @@ public class Hunter extends Specialist {
                 Score.SKILL});
 
         Score[] primAttrs = {Score.SKILL, Score.WITS};
-        ArrayList<Score> primAttributes = new ArrayList<>();
+        List<Score> primAttributes = new ArrayList<>();
         Collections.addAll(primAttributes, primAttrs);
 
         // Setting up for equipment check
         EquipmentDB equipmentDB = EquipmentDB.getInstance();
-        ArrayList<Equipment> startGear = new ArrayList<>();
+        List<Equipment> startGear = new ArrayList<>();
 
         setWeaponOfChoice(weaponOfChoice);
         startGear.add(getWeaponOfChoice());

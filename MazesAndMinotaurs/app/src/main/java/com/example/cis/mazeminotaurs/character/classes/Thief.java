@@ -12,6 +12,7 @@ import com.example.cis.mazeminotaurs.util.CommonStrings;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * This class represents the Thief that is in the game.
@@ -48,13 +49,13 @@ public class Thief extends Specialist {
         setPossibleLevelScores(new Score[]{Score.WILL, Score.WILL, Score.SKILL});
 
         Score[] primAttrs = {Score.LUCK, Score.WITS};
-        ArrayList<Score> primAttributes = new ArrayList<>();
+        List<Score> primAttributes = new ArrayList<>();
         Collections.addAll(primAttributes, primAttrs);
 
         // Setting up for equipment check
         EquipmentDB equipmentDB = EquipmentDB.getInstance();
-        ArrayList<Weapon> possibleWepsOfChoice = new ArrayList<>();
-        ArrayList<Equipment> startGear = new ArrayList<>();
+        List<Weapon> possibleWepsOfChoice = new ArrayList<>();
+        List<Equipment> startGear = new ArrayList<>();
 
         for (String choiceId : new String[]{CommonStrings.DAGGER.getValue(), CommonStrings.SLING.getValue(), CommonStrings.THROW_KNIFE.getValue()}) {
             possibleWepsOfChoice.add(equipmentDB.getWeapon(choiceId));

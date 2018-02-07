@@ -12,6 +12,7 @@ import com.example.cis.mazeminotaurs.util.CommonStrings;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * This class represents the Lyrist that is in the game.
@@ -43,11 +44,11 @@ public class Lyrist extends Magician {
                 Score.WILL});
 
         Score[] primAttrs = {Score.GRACE, Score.LUCK};
-        ArrayList<Score> primAttributes = new ArrayList<>();
+        List<Score> primAttributes = new ArrayList<>();
         Collections.addAll(primAttributes, primAttrs);
 
         EquipmentDB equipmentDB = EquipmentDB.getInstance();
-        ArrayList<Equipment> startGear = new ArrayList<>();
+        List<Equipment> startGear = new ArrayList<>();
 
         int rolledGold = rollDice.roll(6, 3) * 5;
 

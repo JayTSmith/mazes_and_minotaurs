@@ -13,6 +13,7 @@ import com.example.cis.mazeminotaurs.util.CommonStrings;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * This class represents the Noble that is in the game.
@@ -82,11 +83,11 @@ public class Noble extends Warrior {
         mOtherHeritage = mentalHeritage;
 
         Score[] primAttrs = {mPhysicalHeritage, Score.LUCK};
-        ArrayList<Score> primAttributes = new ArrayList<>();
+        List<Score> primAttributes = new ArrayList<>();
         Collections.addAll(primAttributes, primAttrs);
 
         EquipmentDB equipmentDB = EquipmentDB.getInstance();
-        ArrayList<Equipment> startGear = new ArrayList<>();
+        List<Equipment> startGear = new ArrayList<>();
 
         // Check if the weapon of choice is valid
         setWeaponOfChoice(weaponOfChoice);

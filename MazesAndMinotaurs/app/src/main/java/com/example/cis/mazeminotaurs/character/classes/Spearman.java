@@ -11,6 +11,7 @@ import com.example.cis.mazeminotaurs.util.CommonStrings;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * This class represents the Spearman (Normal) that is in the game.
@@ -41,11 +42,11 @@ public class Spearman extends Warrior {
                 Score.WILL, Score.SKILL});
 
         Score[] primAttrs = {Score.SKILL, Score.WILL};
-        ArrayList<Score> primAttributes = new ArrayList<>();
+        List<Score> primAttributes = new ArrayList<>();
         Collections.addAll(primAttributes, primAttrs);
 
         EquipmentDB equipmentDB = EquipmentDB.getInstance();
-        ArrayList<Equipment> startGear = new ArrayList<>();
+        List<Equipment> startGear = new ArrayList<>();
 
         int rolledGold = rollDice.roll(6, 3) * 10;
 

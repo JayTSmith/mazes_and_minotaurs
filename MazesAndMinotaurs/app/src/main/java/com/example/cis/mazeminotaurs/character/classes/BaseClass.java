@@ -11,6 +11,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * This is the abstract base layer of every class for the character in the game.
@@ -59,7 +61,7 @@ public abstract class BaseClass implements Serializable{
     /**
      * The attributes that are given higher priority, decided by the game rules.
      */
-    private ArrayList<Score> mPrimaryAttributes;
+    private List<Score> mPrimaryAttributes;
 
     /**
      * The gender that the player must be in order to select this class.
@@ -74,7 +76,7 @@ public abstract class BaseClass implements Serializable{
     /**
      * The gear that is given on game start to the player.
      */
-    private ArrayList<Equipment> mStartGear;
+    private List<Equipment> mStartGear;
 
     /**
      * The money that is given on game start to the player.
@@ -95,7 +97,7 @@ public abstract class BaseClass implements Serializable{
      * 'Captures' the previous values of scores before level up.
      * Shouldn't be touched unless for the {@code BaseClass.doLevelDown} method.
      */
-    private ArrayList<HashMap<Score, Integer>> mScoreLevelChoice = new ArrayList<>();
+    private List<Map<Score, Integer>> mScoreLevelChoice = new ArrayList<>();
 
     /**
      * The amount of points to improve the luck score on level up.
@@ -116,7 +118,7 @@ public abstract class BaseClass implements Serializable{
                 !Arrays.asList(getPossibleLevelScores()).contains(score)) return;
 
         // Initialization
-        HashMap<Score, Integer> levelData = new HashMap<>();
+        Map<Score, Integer> levelData = new HashMap<>();
         AttributeScore selectedScore = getCharacter().getScore(score);
 
         // Save the scores' values into a hash map for reverting
@@ -140,7 +142,7 @@ public abstract class BaseClass implements Serializable{
      */
     public void doLevelDown() {
         if (getLevel() > 1) {
-            HashMap<Score, Integer> levelData = getScoreLevelChoice().remove(getScoreLevelChoice().size() - 1);
+            Map<Score, Integer> levelData = getScoreLevelChoice().remove(getScoreLevelChoice().size() - 1);
             Score lastSelectedScore = null;
             for (Object rawScore : levelData.keySet().toArray()) {
                 Score score = (Score) rawScore;
@@ -232,7 +234,7 @@ public abstract class BaseClass implements Serializable{
      * Getter for mPrimaryAttributes.
      * @return the value of mPrimaryAttributes.
      */
-    public ArrayList<Score> getPrimaryAttributes() {
+    public List<Score> getPrimaryAttributes() {
         return this.mPrimaryAttributes;
     }
 
@@ -240,7 +242,7 @@ public abstract class BaseClass implements Serializable{
      * Setter for mPrimaryAttributes.
      * @param primaryAttributes the new value for mPrimaryAttributes.
      */
-    public void setPrimaryAttributes(ArrayList<Score> primaryAttributes) {
+    public void setPrimaryAttributes(List<Score> primaryAttributes) {
         this.mPrimaryAttributes = primaryAttributes;
     }
 
@@ -280,7 +282,7 @@ public abstract class BaseClass implements Serializable{
      * Getter for mStartGear.
      * @return the value of mStartGear.
      */
-    public ArrayList<Equipment> getStartGear() {
+    public List<Equipment> getStartGear() {
         return this.mStartGear;
     }
 
@@ -288,7 +290,7 @@ public abstract class BaseClass implements Serializable{
      * Setter for mStartGear.
      * @param startGear the new value of mStartGear.
      */
-    public void setStartGear(ArrayList<Equipment> startGear) {
+    public void setStartGear(List<Equipment> startGear) {
         this.mStartGear = startGear;
     }
 
@@ -369,11 +371,11 @@ public abstract class BaseClass implements Serializable{
      * Getter for mScoreLevelChoice.
      * @return the value of mScoreLevelChoice.
      */
-    public ArrayList<HashMap<Score, Integer>> getScoreLevelChoice() {
+    public List<Map<Score, Integer>> getScoreLevelChoice() {
         return mScoreLevelChoice;
     }
 
-    public void setScoreLevelChoice(ArrayList<HashMap<Score, Integer>> scoreLevelChoice) {
+    public void setScoreLevelChoice(List<Map<Score, Integer>> scoreLevelChoice) {
         mScoreLevelChoice = scoreLevelChoice;
     }
 

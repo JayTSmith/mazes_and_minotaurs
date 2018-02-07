@@ -12,6 +12,7 @@ import com.example.cis.mazeminotaurs.util.CommonStrings;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * This class represents the Amazon (Normal) that is in the game.
@@ -52,12 +53,12 @@ public class Amazon extends Warrior {
                 Score.SKILL, Score.WILL, Score.WITS});
 
         Score[] primAttrs = {Score.SKILL, Score.GRACE};
-        ArrayList<Score> primAttributes = new ArrayList<>();
+        List<Score> primAttributes = new ArrayList<>();
         Collections.addAll(primAttributes, primAttrs);
 
         // Setup for checking starting gear
         EquipmentDB equipmentDB = EquipmentDB.getInstance();
-        ArrayList<Equipment> startGear = new ArrayList<>();
+        List<Equipment> startGear = new ArrayList<>();
 
         // Check the starting melee weapon if it is valid
         if (Arrays.asList(getPossibleStartWeapons()).contains(startingWeapon)) {
