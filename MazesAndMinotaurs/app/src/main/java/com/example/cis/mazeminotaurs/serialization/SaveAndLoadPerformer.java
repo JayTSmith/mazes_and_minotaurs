@@ -33,6 +33,7 @@ import com.google.gson.typeadapters.RuntimeTypeAdapterFactory;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * This class is meant for transforming the PlayerCharacter data into json strings.
@@ -153,7 +154,7 @@ public class SaveAndLoadPerformer {
     public static void loadPortfolio(String jsonString) {
         Type listType = new TypeToken<ArrayList<PlayerCharacter>>() {
         }.getType();
-        ArrayList<PlayerCharacter> newPort = getGson().fromJson(jsonString, listType);
+        List<PlayerCharacter> newPort = getGson().fromJson(jsonString, listType);
         Portfolio.get().setPortfolio(newPort);
     }
 
