@@ -3,6 +3,7 @@ package com.example.cis.mazeminotaurs;
 import com.example.cis.mazeminotaurs.util.CommonStrings;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A singleton that holds all of the equipment data for the application.
@@ -23,17 +24,17 @@ public class EquipmentDB {
     /**
      * A list of equipment available to the user.
      */
-    private ArrayList<Equipment> equipment;
+    private List<Equipment> equipment;
 
     /**
      * A list of weapons available to the user.
      */
-    private ArrayList<Weapon> weapons;
+    private List<Weapon> weapons;
 
     /**
      * A list of armors available to the user.
      */
-    private ArrayList<Armor> armor;
+    private List<Armor> armor;
 
     /**
      * A one-way flag that tells if data has already been loaded in. Shouldn't be
@@ -231,7 +232,7 @@ public class EquipmentDB {
      * Getter for the weapons property.
      * @return the value of weapons.
      */
-    public ArrayList<Weapon> getWeapons() {
+    public List<Weapon> getWeapons() {
         return weapons;
     }
 
@@ -239,7 +240,7 @@ public class EquipmentDB {
      * Getter for the equipment property.
      * @return the value of equipment.
      */
-    public ArrayList<Equipment> getEquipments() {
+    public List<Equipment> getEquipments() {
         return equipment;
     }
 
@@ -247,7 +248,7 @@ public class EquipmentDB {
      * Getter for the armor property.
      * @return the value of armor.
      */
-    public ArrayList<Armor> getArmors() {
+    public List<Armor> getArmors() {
         return armor;
     }
 
@@ -256,7 +257,7 @@ public class EquipmentDB {
      * Setter for the equipment property.
      * @param equipment the new value of equipment.
      */
-    public void setEquipments(ArrayList<Equipment> equipment) {
+    public void setEquipments(List<Equipment> equipment) {
         this.equipment = equipment;
     }
 
@@ -264,7 +265,7 @@ public class EquipmentDB {
      * Setter for the weapons property.
      * @param weapons the new value of weapons.
      */
-    public void setWeapons(ArrayList<Weapon> weapons) {
+    public void setWeapons(List<Weapon> weapons) {
         this.weapons = weapons;
     }
 
@@ -272,7 +273,7 @@ public class EquipmentDB {
      * Setter for the armor property.
      * @param armor the new value of armor.
      */
-    public void setArmors(ArrayList<Armor> armor) {
+    public void setArmors(List<Armor> armor) {
         this.armor = armor;
     }
 

@@ -277,7 +277,7 @@ public class PlayerCharacter implements Serializable {
      * Setter of the mMoney attribute
      * @param money the new money of the character
      */
-    public void setMoney(HashMap<Money, Integer> money) {
+    public void setMoney(Map<Money, Integer> money) {
         mMoney = money;
     }
     /**
@@ -470,7 +470,7 @@ public class PlayerCharacter implements Serializable {
      * Setter of the mScores attribute.
      * @param scores    the new scores of the character.
      */
-    public void setScores(HashMap<Score, AttributeScore> scores) {
+    public void setScores(Map<Score, AttributeScore> scores) {
         mScores = scores;
     }
 

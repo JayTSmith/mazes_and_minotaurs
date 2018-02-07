@@ -4,6 +4,7 @@ import com.example.cis.mazeminotaurs.character.PlayerCharacter;
 import com.example.cis.mazeminotaurs.util.Util;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Thorin Schmidt on 4/6/2017.
@@ -23,7 +24,7 @@ public class Portfolio {
     /**
      * A list of characters. Supposed to be limited to a max of six.
      */
-    private ArrayList<PlayerCharacter> portfolio;
+    private List<PlayerCharacter> portfolio;
 
     /**
      * The single portfolio instance.
@@ -76,7 +77,7 @@ public class Portfolio {
      * Getter for the portfolio property.
      * @return the value of portfolio.
      */
-    public ArrayList<PlayerCharacter> getPortfolio() {
+    public List<PlayerCharacter> getPortfolio() {
         return portfolio;
     }
 
@@ -84,7 +85,7 @@ public class Portfolio {
      * Setter for the portfolio property.
      * @param portfolio the new value of portfolio.
      */
-    public void setPortfolio(ArrayList<PlayerCharacter> portfolio) {
+    public void setPortfolio(List<PlayerCharacter> portfolio) {
         this.portfolio = portfolio;
     }
 

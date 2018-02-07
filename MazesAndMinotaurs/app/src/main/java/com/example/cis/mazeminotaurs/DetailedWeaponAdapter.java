@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * An adapter that displays Weapons with their name and encumberance values.
@@ -20,7 +20,7 @@ public class DetailedWeaponAdapter extends BaseAdapter {
     /**
      * The list of weapons to display.
      */
-    private ArrayList<Weapon> mDataset;
+    private List<Weapon> mDataset;
 
     /**
      * The context to get the layout from.
@@ -33,7 +33,7 @@ public class DetailedWeaponAdapter extends BaseAdapter {
      * @param context a context from a fragment or activity.
      * @param weapons a list of weapons.
      */
-    public DetailedWeaponAdapter(Context context, ArrayList<Weapon> weapons) {
+    public DetailedWeaponAdapter(Context context, List<Weapon> weapons) {
         mContext = context;
         mDataset = weapons;
     }
@@ -81,7 +81,7 @@ public class DetailedWeaponAdapter extends BaseAdapter {
      * Getter for the mDataset property.
      * @return the value of mDataset.
      */
-    public ArrayList<Weapon> getDataset() {
+    public List<Weapon> getDataset() {
         return mDataset;
     }
 
@@ -89,7 +89,7 @@ public class DetailedWeaponAdapter extends BaseAdapter {
      * Setter for the mDataset property.
      * @param dataset the new value of mDataset.
      */
-    public void setDataset(ArrayList<Weapon> dataset) {
+    public void setDataset(List<Weapon> dataset) {
         mDataset = dataset;
     }
 }
