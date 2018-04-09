@@ -11,3 +11,6 @@
 
 .idea/instapk.xml
 instapk.log*
+
+# Linux Hidden File
+.directory
