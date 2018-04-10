@@ -1,4 +1,4 @@
-package com.example.cis.mazeminotaurs;
+package com.example.cis.mazeminotaurs.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.cis.mazeminotaurs.Portfolio;
+import com.example.cis.mazeminotaurs.R;
 import com.example.cis.mazeminotaurs.character.PlayerCharacter;
 
 /**

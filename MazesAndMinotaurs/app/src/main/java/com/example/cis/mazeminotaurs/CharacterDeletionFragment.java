@@ -9,6 +9,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.cis.mazeminotaurs.adapters.CharacterAdapter;
+
 /**
  * This is the old fragment used for deleting characters.
  * @see CharacterManageActivity

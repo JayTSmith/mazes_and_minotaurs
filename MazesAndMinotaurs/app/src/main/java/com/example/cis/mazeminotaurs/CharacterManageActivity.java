@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Toast;
 
+import com.example.cis.mazeminotaurs.adapters.CharacterAdapter;
 import com.example.cis.mazeminotaurs.fragments.CharManageFragment;
 import com.example.cis.mazeminotaurs.serialization.SaveAndLoadPerformer;
 import com.example.cis.mazeminotaurs.util.CommonStrings;

@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.cis.mazeminotaurs.adapters.CharacterAdapter;
+
 /**
  * This is the old fragment for selecting the active character.
  * @see CharacterManageActivity
