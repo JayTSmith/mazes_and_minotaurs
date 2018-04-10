@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.cis.mazeminotaurs.adapters.DetailedWeaponAdapter;
 import com.example.cis.mazeminotaurs.character.PlayerCharacter;
 import com.example.cis.mazeminotaurs.character.SaveAndLoadDialog;
 import com.example.cis.mazeminotaurs.character.classes.Magician;

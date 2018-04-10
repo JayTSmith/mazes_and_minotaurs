@@ -11,7 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.cis.mazeminotaurs.Equipment;
-import com.example.cis.mazeminotaurs.InventoryAdapter;
+import com.example.cis.mazeminotaurs.adapters.InventoryAdapter;
 import com.example.cis.mazeminotaurs.Portfolio;
 import com.example.cis.mazeminotaurs.R;
 import com.example.cis.mazeminotaurs.character.PlayerCharacter;
