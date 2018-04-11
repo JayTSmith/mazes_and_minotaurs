@@ -56,7 +56,6 @@
     <string name="talent_title">Talent Name</string>
     <string name="power_title">Power</string>
 
-    <!-- Dialog Values -->
 
     <!-- Character Create Dialog -->
     <string name="class_word">Class: </string>
@@ -119,4 +118,18 @@
     <string name="hits_head">Hits:</string>
     <string name="error_big_experience">The number in experience is too big.</string>
     <string name="error_multiple_priorities">You can\'t have multiple of the same attribute selected!</string>
+    <string name="title_activity_data_manage">Database Management</string>
+
+    <!-- Database Management Related -->
+    <string name="tab_armor">Armor</string>
+    <string name="tab_other">Equipment</string>
+    <string name="tab_weapon">Weapons</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="manage_equipment">Manage Equipment Database</string>
+
+
+    <!-- Format Strings -->
+    <string name="format_equip_encumb">Encumbrance: %1$d</string>
+    <string name="format_equip_cost">Cost (silver): %1$.2f</string>
+    <string name="format_equip_quantity">Number holding: %1$d</string>
 </resources>

@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.cis.mazeminotaurs.NewCharacter.CharacterCreateActivity;
+import com.example.cis.mazeminotaurs.data_manage.DataManageActivity;
 import com.example.cis.mazeminotaurs.serialization.SaveAndLoadPerformer;
 import com.example.cis.mazeminotaurs.util.Util;
 import com.example.cis.mazeminotaurs.web_resources.CompanionFragment;
@@ -157,6 +158,8 @@ public class MainMazes extends AppCompatActivity
             actIntent = new Intent(this, CharacterPlayActivity.class);
         } else if (id == R.id.manage_characters) {
             actIntent = new Intent(this, CharacterManageActivity.class);
+        } else if (id == R.id.manage_equipment) {
+            actIntent = new Intent(this, DataManageActivity.class);
         } else if (id == R.id.player_manual) {
             contentFragment = new PlayerManualFragment();
         } else if (id == R.id.player_comapanion) {

@@ -11,6 +11,10 @@
             android:icon="@drawable/ic_person_black_24dp"
             android:title="@string/play_character"/>
         <item
+            android:id="@+id/manage_equipment"
+            android:icon="@drawable/ic_people_black_24dp"
+            android:title="@string/manage_equipment"/>
+        <item
             android:id="@+id/manage_characters"
             android:icon="@drawable/ic_people_black_24dp"
             android:title="@string/manage_characters"/>
