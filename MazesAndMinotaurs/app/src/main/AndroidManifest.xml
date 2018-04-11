@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.cis.mazeminotaurs"
-          android:installLocation="auto">
+    package="com.example.cis.mazeminotaurs"
+    android:installLocation="auto">
 
     <supports-screens
         android:largeScreens="true"
         android:normalScreens="true"
         android:smallScreens="true"
-        android:xlargeScreens="true"/>
+        android:xlargeScreens="true" />
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -25,25 +25,21 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity
             android:name=".NewCharacter.CharacterCreateActivity"
             android:label="CharacterCreation"
             android:parentActivityName=".MainMazes"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.cis.mazeminotaurs.NewCharacter.CharacterCreateActivity"
-                />
+                android:value="com.example.cis.mazeminotaurs.NewCharacter.CharacterCreateActivity" />
         </activity>
-
         <activity
             android:name=".CharacterManageActivity"
             android:label="@string/title_activity_character_manage"
@@ -51,7 +47,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.cis.mazeminotaurs.MainMazes"/>
+                android:value="com.example.cis.mazeminotaurs.MainMazes" />
         </activity>
         <activity
             android:name=".CharacterPlayActivity"
@@ -61,7 +57,16 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.cis.mazeminotaurs.MainMazes"/>
+                android:value="com.example.cis.mazeminotaurs.MainMazes" />
+        </activity>
+        <activity
+            android:name=".data_manage.DataManageActivity"
+            android:label="@string/title_activity_data_manage"
+            android:parentActivityName=".MainMazes"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.cis.mazeminotaurs.MainMazes" />
         </activity>
     </application>
 

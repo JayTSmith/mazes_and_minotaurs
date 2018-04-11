@@ -22,6 +22,7 @@ import android.widget.TextView;
 
 import com.example.cis.mazeminotaurs.adapters.CharacterAdapter;
 import com.example.cis.mazeminotaurs.R;
+import com.example.cis.mazeminotaurs.adapters.EquipmentDBAdapter;
 
 public class DataManageActivity extends AppCompatActivity {
 
@@ -142,6 +143,7 @@ public class DataManageActivity extends AppCompatActivity {
             ListView lv = (ListView) rootView.findViewById(R.id.section_list_view);
             lv.setAdapter(mAdapter);
 
+
             return rootView;
         }
     }
@@ -160,10 +162,7 @@ public class DataManageActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            if (position == 1) {
-                return ItemListFragment.newInstance(new CharacterAdapter(getBaseContext()));
-            }
-            return PlaceholderFragment.newInstance(position + 1);
+            return ItemListFragment.newInstance(new EquipmentDBAdapter(position+ 1, getBaseContext()));
         }
 
         @Override
