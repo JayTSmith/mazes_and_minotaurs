@@ -60,7 +60,7 @@
                 android:value="com.example.cis.mazeminotaurs.MainMazes" />
         </activity>
         <activity
-            android:name=".data_manage.DataManageActivity"
+            android:name=".DataManageActivity"
             android:label="@string/title_activity_data_manage"
             android:parentActivityName=".MainMazes"
             android:theme="@style/AppTheme.NoActionBar">

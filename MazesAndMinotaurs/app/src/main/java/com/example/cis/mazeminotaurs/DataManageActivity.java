@@ -1,4 +1,4 @@
-package com.example.cis.mazeminotaurs.data_manage;
+package com.example.cis.mazeminotaurs;
 
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;

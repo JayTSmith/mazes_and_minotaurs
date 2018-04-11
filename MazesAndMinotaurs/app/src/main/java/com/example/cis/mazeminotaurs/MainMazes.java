@@ -17,7 +17,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.cis.mazeminotaurs.NewCharacter.CharacterCreateActivity;
-import com.example.cis.mazeminotaurs.data_manage.DataManageActivity;
 import com.example.cis.mazeminotaurs.serialization.SaveAndLoadPerformer;
 import com.example.cis.mazeminotaurs.util.Util;
 import com.example.cis.mazeminotaurs.web_resources.CompanionFragment;
