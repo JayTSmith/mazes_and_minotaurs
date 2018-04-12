@@ -126,10 +126,15 @@
     <string name="tab_weapon">Weapons</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="manage_equipment">Manage Equipment Database</string>
+    <string name="manage_equipment_id_text_view">Name/ID:</string>
+    <string name="manage_equipment_cost_text_view">Cost (silver):</string>
+    <string name="manage_equipment_encumb_text_view">Encumbrance:</string>
 
 
     <!-- Format Strings -->
     <string name="format_equip_encumb">Encumbrance: %1$d</string>
     <string name="format_equip_cost">Cost (silver): %1$.2f</string>
     <string name="format_equip_quantity">Number holding: %1$d</string>
+    <string name="manage_equipment_delete_button">Delete Equipment</string>
+    <string name="manage_equipment_default_error">You can\'t delete a non user-made item!</string>
 </resources>

@@ -2,6 +2,7 @@ package com.example.cis.mazeminotaurs;
 
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -16,6 +17,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -121,8 +124,8 @@ public class DataManageActivity extends AppCompatActivity {
         }
     }
 
-    public static class ItemListFragment extends Fragment {
-        private ListAdapter mAdapter;
+    public static class ItemListFragment extends Fragment implements EquipmentManageDialog.EquipmentManageListener{
+        private EquipmentDBAdapter mAdapter;
 
         public ItemListFragment() {
         }
@@ -130,7 +133,7 @@ public class DataManageActivity extends AppCompatActivity {
         public static ItemListFragment newInstance(ListAdapter adapter) {
             ItemListFragment fragment = new ItemListFragment();
             // Don't worry about it. - Justin Smith
-            fragment.mAdapter = adapter;
+            fragment.mAdapter = (EquipmentDBAdapter) adapter;
 
             return fragment;
         }
@@ -142,9 +145,21 @@ public class DataManageActivity extends AppCompatActivity {
 
             ListView lv = (ListView) rootView.findViewById(R.id.section_list_view);
             lv.setAdapter(mAdapter);
+            lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    DialogFragment dialog = EquipmentManageDialog.newInstance((Equipment) adapterView.getItemAtPosition(i), i);
+                    dialog.show(getFragmentManager(), EquipmentManageDialog.TAG);
+                }
+            });
 
 
             return rootView;
+        }
+
+        @Override
+        public void onDelete(int i) {
+            mAdapter.removeItem(i);
         }
     }
 
