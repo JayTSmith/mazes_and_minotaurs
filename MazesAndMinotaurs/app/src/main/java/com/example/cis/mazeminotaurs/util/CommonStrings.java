@@ -51,6 +51,8 @@ public enum CommonStrings {
     // Bundle keys
     ATTR_PRIORITY_ARGS("ATTR_PRIORITY_ARGS"),
     CHARACTER_ARG("CHARACTER_ARG"),
+    EQUIPMENT_KEY("EQUIPMENT_ARG"),
+    EQUIPMENT_LIST_KEY("EQUIPMENT_LIST_ARG"),
     SCORE_ARG("SCORE_ARG");
 
     /**

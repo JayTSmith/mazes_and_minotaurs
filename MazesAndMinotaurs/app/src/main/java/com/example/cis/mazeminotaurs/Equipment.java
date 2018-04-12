@@ -172,6 +172,14 @@ public class Equipment {
         mLongDescription = longDescription;
     }
 
+    public boolean isUserMade() {
+        return mUserMade;
+    }
+
+    public void setUserMade(boolean mUserMade) {
+        this.mUserMade = mUserMade;
+    }
+
     @Override
     public String toString() {
         return "Equipment{" +
