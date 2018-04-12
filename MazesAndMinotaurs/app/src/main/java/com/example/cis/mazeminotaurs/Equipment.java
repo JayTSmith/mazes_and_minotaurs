@@ -38,7 +38,12 @@ public class Equipment {
     private boolean mEquipped;
 
     /**
-     * Default constructor
+     * A boolean that indicates this equipment wasn't made by the end user.
+     */
+    private boolean mUserMade;
+
+    /**
+     * Shortened constructor for code-generated items.
      *
      * @param resId           The name of the item. Must be unique.
      * @param encumberance    The encumberance of the item.
@@ -48,11 +53,27 @@ public class Equipment {
      */
     public Equipment(String resId, int encumberance, int quantity,
                      double costInSp, String longDescription) {
+        this(resId, encumberance, quantity, costInSp, longDescription, false);
+    }
+
+    /**
+     * Full constructor
+     *
+     * @param resId           The name of the item. Must be unique.
+     * @param encumberance    The encumberance of the item.
+     * @param quantity        The number of the item. Unused.
+     * @param costInSp        The cost of the item.
+     * @param longDescription The description of the item.
+     * @param userMade        If the item was created by a user.
+     */
+    public Equipment(String resId, int encumberance, int quantity,
+                     double costInSp, String longDescription, boolean userMade) {
         mResId = resId;
         mEncumberance = encumberance;
         mCostInSp = costInSp;
         mLongDescription = longDescription;
         mEquipped = false;
+        mUserMade = userMade;
     }
 
     /**
