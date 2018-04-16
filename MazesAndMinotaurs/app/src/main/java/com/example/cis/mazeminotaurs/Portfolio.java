@@ -1,8 +1,16 @@
 package com.example.cis.mazeminotaurs;
 
+import android.content.Context;
+import android.util.Log;
+
 import com.example.cis.mazeminotaurs.character.PlayerCharacter;
+import com.example.cis.mazeminotaurs.serialization.SaveAndLoadPerformer;
 import com.example.cis.mazeminotaurs.util.Util;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -135,6 +143,31 @@ public class Portfolio {
      */
     public void setActiveCharacterIndex(int activeCharacterIndex) {
         this.activeCharacterIndex = activeCharacterIndex;
+    }
+
+    /**
+     * Saves the portfolio to the file specified by {@link Portfolio#FILENAME}.
+     *
+     * @param context An android context to open the file.
+     */
+    public void save(Context context) {
+        FileOutputStream fos;
+        OutputStreamWriter osw;
+
+        Log.d(TAG, "Saving portfolio...");
+
+        try {
+            fos = context.openFileOutput(FILENAME, Context.MODE_PRIVATE);
+            osw = new OutputStreamWriter(fos);
+            osw.write(SaveAndLoadPerformer.toJsonPortfolio());
+
+            osw.close();
+            fos.close();
+            Log.d(TAG, "Save successful!");
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e(TAG, "Save failed!");
+        }
     }
 
     /**

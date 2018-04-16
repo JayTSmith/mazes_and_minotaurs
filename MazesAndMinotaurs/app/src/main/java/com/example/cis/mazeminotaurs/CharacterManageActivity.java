@@ -77,16 +77,7 @@ public class CharacterManageActivity extends AppCompatActivity implements CharMa
             mAdapter.removeCharacter(i);
 
             // Auto-saves the Portfolio
-            try {
-                FileOutputStream fos = getApplicationContext()
-                        .openFileOutput(Portfolio.FILENAME, Context.MODE_PRIVATE);
-                OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fos);
-                outputStreamWriter.write(SaveAndLoadPerformer.savePortfolio());
-                outputStreamWriter.close();
-                fos.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            Portfolio.get().save(getApplicationContext());
         } else {
             Toast.makeText(this, "Must have one character at all times!", Toast.LENGTH_SHORT).show();
         }

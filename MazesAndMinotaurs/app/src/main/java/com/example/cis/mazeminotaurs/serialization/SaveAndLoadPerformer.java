@@ -79,7 +79,7 @@ public class SaveAndLoadPerformer {
 
     /**
      * Takes the player character parameter and transforms it into a json string.
-     * @deprecated No longer used, use savePortfolio instead.
+     * @deprecated No longer used, use toJsonPortfolio instead.
      * @param playerCharacter the player character that needs to be serialized.
      * @return json string of playerCharacter
      */
@@ -91,7 +91,7 @@ public class SaveAndLoadPerformer {
 
     /**
      * Takes the character index parameter and transforms it into a json string.
-     * @deprecated No longer used, use savePortfolio instead.
+     * @deprecated No longer used, use toJsonPortfolio instead.
      * @param characterIndex the index of the player character inside of the Portfoilo singleton to save.
      * @return json string of playerCharacter
      */
@@ -140,7 +140,7 @@ public class SaveAndLoadPerformer {
      *
      * @return a json string version of portfolio.
      */
-    public static String savePortfolio() {
+    public static String toJsonPortfolio() {
         Type listType = new TypeToken<ArrayList<PlayerCharacter>>() {
         }.getType();
         return getGson().toJson(Portfolio.get().getPortfolio(), listType);
@@ -162,7 +162,7 @@ public class SaveAndLoadPerformer {
      * Serializes the EquipmentDB singleton and returns it as a json string.
      * @return json string version of EquipmentDB singleton.
      */
-    public static String saveEquipmentDB() {
+    public static String toJsonEquipmentDB() {
         return getGson().toJson(EquipmentDB.getInstance());
     }
 
