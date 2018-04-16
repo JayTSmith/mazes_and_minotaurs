@@ -80,7 +80,6 @@ public class CharacterSerializer implements JsonSerializer<PlayerCharacter>, Jso
         rootObject.add("mMoney", context.serialize(src.getMoney(), moneyMapType));
         rootObject.add("mAge", context.serialize(src.getAge()));
         rootObject.add("mName", context.serialize(src.getName()));
-        System.out.println(getGson().toJsonTree(src.getInventory(), equipListType));
         rootObject.add("mInventory", getGson().toJsonTree(src.getInventory(), equipListType));
         rootObject.add("mCurrentWeapon", context.serialize(src.getCurrentWeapon()));
         rootObject.add("mHelmet", context.serialize(src.getHelmet()));
