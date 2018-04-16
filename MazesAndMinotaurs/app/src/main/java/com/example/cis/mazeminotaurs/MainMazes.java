@@ -100,7 +100,7 @@ public class MainMazes extends AppCompatActivity
             try {
                 FileOutputStream fos = getApplicationContext().openFileOutput(Portfolio.FILENAME, Context.MODE_PRIVATE);
                 OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fos);
-                outputStreamWriter.write(SaveAndLoadPerformer.savePortfolio());
+                outputStreamWriter.write(SaveAndLoadPerformer.toJsonPortfolio());
                 outputStreamWriter.close();
                 fos.close();
             } catch (IOException e) {
@@ -111,7 +111,7 @@ public class MainMazes extends AppCompatActivity
             try {
                 FileOutputStream fos = getApplicationContext().openFileOutput(EquipmentDB.FILENAME, Context.MODE_PRIVATE);
                 OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fos);
-                outputStreamWriter.write(SaveAndLoadPerformer.saveEquipmentDB());
+                outputStreamWriter.write(SaveAndLoadPerformer.toJsonEquipmentDB());
                 outputStreamWriter.close();
                 fos.close();
             } catch (IOException e) {

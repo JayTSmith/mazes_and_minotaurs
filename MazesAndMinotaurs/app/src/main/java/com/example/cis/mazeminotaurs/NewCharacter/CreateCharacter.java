@@ -179,17 +179,7 @@ public class CreateCharacter extends Fragment implements AttributePriorityDialog
                 }
 
                 // Auto-saves the Portfolio
-                try {
-                    FileOutputStream fos = getActivity()
-                            .openFileOutput(Portfolio.FILENAME, Context.MODE_PRIVATE);
-                    OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fos);
-                    outputStreamWriter.write(SaveAndLoadPerformer.savePortfolio());
-                    outputStreamWriter.close();
-                    fos.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-              
+                Portfolio.get().save(getContext());
                 // Clear the backstack before replacing the screen
                 Util.clearBackStack(getFragmentManager());
                 Intent intent = new Intent(getContext(), CharacterPlayActivity.class);
